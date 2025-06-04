@@ -16,12 +16,14 @@ const Login = () => {
         })
         console.log(res.data.result.EC);
 
-        if (!res.data.result.EC === 0) {
-            alert("Đăng nhập thành công");
+        if (res.data.result.EC === 0) {
+            alert(res.data.result.message);
             navigate('/home')
         }
         else {
-            alert("Đăng nhập thất bại");
+            alert(res.data.result.message);
+            setEmail('');
+            setPassword('');
         }
     }
 
@@ -31,9 +33,9 @@ const Login = () => {
             <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
                 <div className="flex flex-col bg-white p-8 rounded-lg shadow-md w-96 ">
                     <label>Tài khoản</label>
-                    <input onChange={(e) => { setEmail(e.target.value) }} className="outline-none border h-10 p-5 rounded-xl mt-1" type="text" placeholder="Nhap tai khoan" />
+                    <input value={email} onChange={(e) => { setEmail(e.target.value) }} className="outline-none border h-10 p-5 rounded-xl mt-1" type="text" placeholder="Nhap tai khoan" />
                     <label className="pt-5">Mật khẩu</label>
-                    <input onChange={(e) => { setPassword(e.target.value) }} className="outline-none border h-10 p-5 rounded-xl mt-1" type="text" placeholder="Nhập mật khẩu" />
+                    <input value={password} onChange={(e) => { setPassword(e.target.value) }} className="outline-none border h-10 p-5 rounded-xl mt-1" type="text" placeholder="Nhập mật khẩu" />
                     <button onClick={handleLogin} className="bg-gray-500 h-14 mt-10 rounded-lg hover:bg-gray-700 hover:text-white">Login</button>
                 </div>
             </div>
