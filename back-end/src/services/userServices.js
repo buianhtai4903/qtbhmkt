@@ -35,6 +35,7 @@ exports.login = async (email, password) => {
     if (!user) {
         console.log('khong tim thay user');
         return {
+            EC: -1,
             message: 'tai khoan khong ton tai',
             data: null
         };
@@ -44,6 +45,7 @@ exports.login = async (email, password) => {
         if (isMatch) {
             console.log('Dang nhap thanh cong');
             return {
+                EC: 0,
                 message: 'Dang nhap thanh cong',
                 data: {
                     username: user.full_name,
@@ -54,6 +56,7 @@ exports.login = async (email, password) => {
         else {
             console.log('Mat khau khong dung');
             return {
+                EC: -1,
                 message: 'mat khau khong dung',
                 data: null
             };
