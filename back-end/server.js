@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const prisma = require('./prisma/client');
 const userRoutes = require('./src/routes/userRouts');
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use('/user', userRoutes);
 
 app.get('/', async (req, res) => {
