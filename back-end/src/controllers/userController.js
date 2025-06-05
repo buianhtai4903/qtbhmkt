@@ -4,14 +4,12 @@ exports.register = async (req, res) => {
     const result = await userService.register(email, password, full_name);
     if (result) {
         return res.status(201).json({
-            message: 'Tao tai khoan thanh cong',
-            data: result
+            result
         })
     }
     else {
         return res.status(400).json({
-            message: 'Tao tai khoan that bai',
-            data: null
+            result
         })
     }
 }

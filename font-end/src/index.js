@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import LoginPage from './pages/login';
+import RegisterPage from './pages/resgister';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -11,6 +12,7 @@ root.render(
     <Router>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/resgister" element={<RegisterPage />} />
       </Routes>
     </Router>
   </React.StrictMode>

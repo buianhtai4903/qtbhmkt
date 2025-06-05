@@ -9,7 +9,11 @@ exports.register = async (email, password, full_name) => {
 
     if (user) {
         console.log('User already exists');
-        return null;
+        return {
+            EC: -1,
+            message: 'Tài khoản đã tồn tại',
+            data: null
+        }
     }
 
     // Hash the password
@@ -23,7 +27,19 @@ exports.register = async (email, password, full_name) => {
         }
     })
 
-    return result;
+    if (result)
+        return {
+            EC: 0,
+            message: 'tạo tài khoản thành công',
+            data: null
+        };
+    else {
+        return {
+            EC: -1,
+            message: 'tạo tài khoản thất bại',
+            data: null
+        }
+    }
 }
 
 exports.login = async (email, password) => {
