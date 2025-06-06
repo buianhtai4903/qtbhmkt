@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import API from "../../configs/api";
 import { useNavigate } from 'react-router-dom';
+import { handleLoginService } from "../../services/userServices";
 
 const Login = () => {
     const [email, setEmail] = useState();
@@ -10,20 +11,15 @@ const Login = () => {
 
 
     const handleLogin = async () => {
-        const res = await axios.post(`${API}/user/login`, {
-            email: email,
-            password: password
-        })
-        console.log(res.data.result.EC);
 
-        if (res.data.result.EC === 0) {
-            alert(res.data.result.message);
-            navigate('/home')
+        const res = await handleLoginService(email, password)
+
+        if (res.result.EC === 0) {
+            alert(res.result.message);
+            navigate('/')
         }
         else {
-            alert(res.data.result.message);
-            setEmail('');
-            setPassword('');
+            alert(res.result.message);
         }
     }
 
