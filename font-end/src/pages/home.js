@@ -1,8 +1,10 @@
-import Home from "../components/home/homeComponents";
+import Navbar from "../components/layouts/navbar";
+import Sidebar from "../components/layouts/sidebar";
+
 const HomePage = () => {
     return (
         <div>
-            <Home />
+            trang chủ
         </div>
     )
 }

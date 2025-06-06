@@ -29,21 +29,24 @@ const Register = () => {
     }
     return (
         <div>
-            <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-                <div className="flex flex-col bg-white p-8 rounded-lg shadow-md w-96 ">
-                    <div className="h-14 rounded-lg  flex items-center justify-center">
-                        Register
+            <form onSubmit={handleRegister}>
+                <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+                    <div className="flex flex-col bg-white p-8 rounded-lg shadow-md w-96 ">
+                        <div className="h-14 rounded-lg  flex items-center justify-center">
+                            Register
+                        </div>
+                        <hr></hr>
+                        <label>Họ tên</label>
+                        <input required value={full_name} onChange={(e) => { setFullName(e.target.value) }} className="outline-none border h-10 p-5 rounded-xl mt-1" type="text" placeholder="Bùi Anh X" />
+                        <label className="pt-5">Tài khoản</label>
+                        <input required value={email} onChange={(e) => { setEmail(e.target.value) }} className="outline-none border h-10 p-5 rounded-xl mt-1" type="text" placeholder="Nhập mail" />
+                        <label className="pt-5">Mật khẩu</label>
+                        <input required value={password} onChange={(e) => { setPassword(e.target.value) }} className="outline-none border h-10 p-5 rounded-xl mt-1" type="password" placeholder="Nhập mật khẩu" />
+                        <button type="submit" className="bg-gray-500 h-14 mt-10 rounded-lg hover:bg-gray-700 hover:text-white">Đăng kí</button>
                     </div>
-                    <hr></hr>
-                    <label>Họ tên</label>
-                    <input required value={full_name} onChange={(e) => { setFullName(e.target.value) }} className="outline-none border h-10 p-5 rounded-xl mt-1" type="text" placeholder="Bùi Anh X" />
-                    <label className="pt-5">Tài khoản</label>
-                    <input required value={email} onChange={(e) => { setEmail(e.target.value) }} className="outline-none border h-10 p-5 rounded-xl mt-1" type="text" placeholder="Nhập mail" />
-                    <label className="pt-5">Mật khẩu</label>
-                    <input required value={password} onChange={(e) => { setPassword(e.target.value) }} className="outline-none border h-10 p-5 rounded-xl mt-1" type="password" placeholder="Nhập mật khẩu" />
-                    <button onClick={handleRegister} className="bg-gray-500 h-14 mt-10 rounded-lg hover:bg-gray-700 hover:text-white">Đăng kí</button>
                 </div>
-            </div>
+            </form>
+
         </div >
     )
 }
