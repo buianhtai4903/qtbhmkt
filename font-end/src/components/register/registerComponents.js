@@ -36,11 +36,11 @@ const Register = () => {
                     </div>
                     <hr></hr>
                     <label>Họ tên</label>
-                    <input value={full_name} onChange={(e) => { setFullName(e.target.value) }} className="outline-none border h-10 p-5 rounded-xl mt-1" type="text" placeholder="Bùi Anh X" />
+                    <input required value={full_name} onChange={(e) => { setFullName(e.target.value) }} className="outline-none border h-10 p-5 rounded-xl mt-1" type="text" placeholder="Bùi Anh X" />
                     <label className="pt-5">Tài khoản</label>
-                    <input value={email} onChange={(e) => { setEmail(e.target.value) }} className="outline-none border h-10 p-5 rounded-xl mt-1" type="text" placeholder="Nhập mail" />
+                    <input required value={email} onChange={(e) => { setEmail(e.target.value) }} className="outline-none border h-10 p-5 rounded-xl mt-1" type="text" placeholder="Nhập mail" />
                     <label className="pt-5">Mật khẩu</label>
-                    <input value={password} onChange={(e) => { setPassword(e.target.value) }} className="outline-none border h-10 p-5 rounded-xl mt-1" type="password" placeholder="Nhập mật khẩu" />
+                    <input required value={password} onChange={(e) => { setPassword(e.target.value) }} className="outline-none border h-10 p-5 rounded-xl mt-1" type="password" placeholder="Nhập mật khẩu" />
                     <button onClick={handleRegister} className="bg-gray-500 h-14 mt-10 rounded-lg hover:bg-gray-700 hover:text-white">Đăng kí</button>
                 </div>
             </div>
