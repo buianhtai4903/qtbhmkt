@@ -125,7 +125,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "T:\\project\\qtbhmkt\\back-end\\src\\generated\\prisma",
+      "value": "D:\\tai\\qtbhmkt\\back-end\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -139,7 +139,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "T:\\project\\qtbhmkt\\back-end\\prisma\\schema.prisma",
+    "sourceFilePath": "D:\\tai\\qtbhmkt\\back-end\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
